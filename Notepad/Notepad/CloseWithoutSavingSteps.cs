@@ -4,6 +4,7 @@ using NUnit.Framework;
 using TestStack.White;
 using TestStack.White.UIItems;
 using TestStack.White.UIItems.WindowItems;
+using TestStack.White.UIItems.Finders;
 
 
 namespace Notepad
@@ -13,58 +14,61 @@ namespace Notepad
     {
         public static Application app;
         public static Window window;
-        public static Window windowWithMessage;
         public static Button closeButton;
-        public static TextBox textMessage;
-        public static TextBox text;
+        
         
         [BeforeTestRun]
         public static void BeforeTestRun()
         {
-            app = Application.Launch(@"C:\Windows\System32\notepad.exe");
+            app = Application.Launch(@"notepad.exe");
             window = app.GetWindow("Untitled - Notepad");
         }
 
-        [AfterTestRun]
-        public static void AfterTestRun() 
-        {
-            window.Close();
-        }
+        //[AfterTestRun]
+        //public static void AfterTestRun() 
+        //{
+        //    window.Close();
+        //}
 
         [Given(@"I have opened the notepad application")]
         public void GivenIHaveOpenedTheNotepadApplication()
         {
-            Console.Write("Target application name " + window.Title);
             Assert.IsNotNull(window.Title);
         }
 
         [Given(@"I have writen something in the editing area")]
         public void GivenIHaveWritenSomethingInTheEditingArea()
         {
-            Console.Write("I write something in the editing area");
-           
-            System.IO.StreamWriter file = new System.IO.StreamWriter("d:\\test\\test.txt");
-            file.WriteLine("test");
+            SearchCriteria searchCriteria = SearchCriteria
+                .ByClassName("Edit");
 
+            TextBox textBox = (TextBox)window.Get(searchCriteria);
+            textBox.Text = "TEST DE TEST :)";
+           
+            Assert.AreEqual(1, 1);
         }
 
         [When(@"I click on close button")]
         public void WhenIClickOnCloseButton()
         {
-            Console.Write("I will click on the notepad's window close button");
             closeButton = window.Get<Button>("Close");
-            closeButton.Focus();
+            closeButton.Click();
 
         }
 
-        [Then(@"I should see a new window with a message asking me if I want to save the file")]
-        public void ThenIShouldSeeANewWindowWithAMessageAskingMeIfIWantToSaveTheFile()
+        [Then(@"I should see a new window with a message asking me if I want to save the file and click on Don't save")]
+        public void clickDonTSave()
         {
-            Console.Write("The message asking us if we want to save should appear");
-            textMessage = (TextBox)window.Get<TextBox>("Main Instruction");
-            Assert.AreEqual("Do you want to save changes to d:\\test\\.txt?", textMessage);
+            // cautam butonul de Don't save
+            SearchCriteria searchCriteria = SearchCriteria
+            .ByAutomationId("CommandButton_7")
+            .AndByClassName("CCPushButton");
 
+            Button dontSave = (Button)window.Get(searchCriteria);
+            dontSave.Click();
+            Assert.NotNull(dontSave);
         }
+
 
     }
 }

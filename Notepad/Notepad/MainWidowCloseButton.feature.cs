@@ -82,7 +82,8 @@ this.ScenarioSetup(scenarioInfo);
 #line 11
  testRunner.When("I click on close button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 12
- testRunner.Then("I should see a new window with a message asking me if I want to save the file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I should see a new window with a message asking me if I want to save the file and" +
+                    " click on Don\'t save", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
