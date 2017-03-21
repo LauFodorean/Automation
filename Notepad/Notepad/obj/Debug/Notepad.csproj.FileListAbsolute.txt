@@ -1,0 +1,14 @@
+D:\TAS\Juniormind\Github\Notepad\Notepad\bin\Debug\Notepad.exe.config
+D:\TAS\Juniormind\Github\Notepad\Notepad\bin\Debug\Notepad.exe
+D:\TAS\Juniormind\Github\Notepad\Notepad\bin\Debug\Notepad.pdb
+D:\TAS\Juniormind\Github\Notepad\Notepad\bin\Debug\nunit.framework.dll
+D:\TAS\Juniormind\Github\Notepad\Notepad\bin\Debug\TechTalk.SpecFlow.dll
+D:\TAS\Juniormind\Github\Notepad\Notepad\bin\Debug\nunit.framework.xml
+D:\TAS\Juniormind\Github\Notepad\Notepad\obj\Debug\Notepad.csprojResolveAssemblyReference.cache
+D:\TAS\Juniormind\Github\Notepad\Notepad\obj\Debug\Notepad.exe
+D:\TAS\Juniormind\Github\Notepad\Notepad\obj\Debug\Notepad.pdb
+D:\TAS\Juniormind\Github\Notepad\Notepad\bin\Debug\Castle.Core.dll
+D:\TAS\Juniormind\Github\Notepad\Notepad\bin\Debug\TestStack.White.dll
+D:\TAS\Juniormind\Github\Notepad\Notepad\bin\Debug\Castle.Core.xml
+D:\TAS\Juniormind\Github\Notepad\Notepad\bin\Debug\TestStack.White.pdb
+D:\TAS\Juniormind\Github\Notepad\Notepad\bin\Debug\TestStack.White.xml
