@@ -9,4 +9,4 @@ Scenario: CloseWithoutSaving
 	Given I have opened the notepad application
 	And I have writen something in the editing area
 	When I click on close button
-	Then I should see a new window with a message asking me if I want to save the file
+	Then I should see a new window with a message asking me if I want to save the file and click on Don't save
